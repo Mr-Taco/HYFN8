@@ -1,0 +1,88 @@
+
+// client logo list
+#client-logos-mobile {
+  display: none;
+}
+
+#client-logos {
+  padding: 0;
+}
+
+#client-logos, #client-logos-mobile {
+
+  background: white;
+  padding-bottom: 5px;
+  @include container();
+
+  .client-logo-pane {
+    @include column(1, true);
+    position: relative;
+    height: 74px;
+    cursor: pointer;
+    @include perspective(200px);
+
+    &:last-child {
+      @include last;
+    }
+
+    .logo-face {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+
+      .csstransitions & {
+        opacity: 0;
+        @include transform3d(rotateX(180deg));
+        @include transition(all 0.6s ease-in-out);
+      }
+
+      .no-csstransitions & {
+        display: none;
+      }
+    }
+
+    &.face-1 .face-1, &.face-2 .face-2, &.face-3 .face-3, &.face-4 .face-4, &.face-5 .face-5, &.face-6 .face-6, &.face-7 .face-7 {
+
+      .csstransitions & {
+        @include transform3d(rotateX(0deg));
+        opacity: 1;
+      }
+
+      .no-csstransitions & {
+        display: block;
+      }
+    }
+  }
+}
+
+#client-logos {
+  padding-bottom: 50px;
+}
+
+@include respond-to ('mobile-phone') {
+  #client-logos {
+    display: none;
+  }
+
+  #client-logos-mobile {
+    display: inline-block;
+    padding: 15px 0;
+
+
+    .client-logo-pane {
+      @include column(1, true);
+      position: relative;
+      margin: 0 2%;
+      height: 74px;
+
+      img {
+        padding-top: 15px;
+      }
+
+      &:first-child {
+        margin-left: 10%;
+      }
+    }
+  }
+}
+

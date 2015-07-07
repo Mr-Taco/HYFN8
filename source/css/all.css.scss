@@ -1,0 +1,12 @@
+
+
+$blueprint_grid_columns: 6;
+$blueprint_grid_width: 16.66%;
+$blueprint-grid-margin: 0;
+
+@import "blueprint/grid";
+@import "compass";
+@import "compass/utilities/general/clearfix";
+
+@import "_mixins", "_fonts", "_application", "_home", "_foo", "_logo_flipper", "_mobile_header", "_about", "_contact", "_features", "_mobile_footer", "_thank_you", "_demo_form", "_browse_happy";
+

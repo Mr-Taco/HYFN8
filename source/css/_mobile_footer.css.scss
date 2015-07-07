@@ -1,0 +1,65 @@
+footer {
+
+  .in_action {
+    text-align: center;
+    background-color: #cdd4da;
+    font-size: calc-em(20, 16);
+    line-height: calc-em(24, 16);
+    color: #50636e;
+    padding-top: 4%;
+    margin-top: -4px;
+    border-top: 1px solid #c5cdd3;
+    border-bottom: 1px solid #e1e5e9;
+    display: none;
+
+    @include respond-to ('mobile-phone') {
+      display: block;
+    }
+
+    p {
+      color: #50636e;
+    }
+
+    button {
+      border: 1px solid #000000;
+      background-color: #1f292e;
+      @include gradient(linear,top,#394950,#1c2529,'left top, left bottom');
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+      color: white;
+      padding: 1% 7%;
+      border-radius: 5px;
+      font-size: calc-em(17.5%, 20%);
+      font-family: OpenSansLight;
+      margin-top: 2%;
+      margin-bottom: 6%;
+
+      &:hover {
+        @include lime_button;
+      }
+    }
+  }
+
+
+  #get_connected_mobile {
+    @include column(6, true);
+    text-align: center;
+    background-color: #1f292e;
+    @include gradient(linear,top,rgb(31, 41, 46),rgb(26, 34, 38),'left top, left bottom');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+    border-top: 1px solid #abb0b3;
+    display: none;
+
+    a.icon_set {
+      font-family: 'HYFN8IconSet';
+      font-size: calc-em(22, 16);
+      line-height: calc-em(5.5, 16);
+      margin: 0 auto 20px auto;
+      color: #75838c;
+    }
+
+    @include respond-to ('mobile-phone') {
+      display: block;
+    }
+  }
+
+}

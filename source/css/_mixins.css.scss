@@ -1,0 +1,125 @@
+$darkBlue: #50636e;
+$lightBlue: #A6B2BA;
+
+$icons-layout: smart;
+
+@import 'icons/*.png';
+@include all-icons-sprites;
+
+@mixin icon_sprite($name) {
+  @include icons-sprite($name);
+  height: icons-sprite-height($name);
+  width: icons-sprite-width($name);
+}
+
+/*
+
+Highest resolution for mobile site is the Galaxy Note 2 1280 x 720
+
+*/
+
+$mobile-phone: "only screen and (max-width : 720px)";
+$iPad-Portrait: "only screen and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)";
+$iPad-Landscape: "only screen and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)";
+
+@mixin respond-to($media) {
+  @if $media == mobile-phone {
+    @media #{$mobile-phone} { @content; }
+  }
+  @else if $media == iPad-Landscape {
+    @media #{$iPad-Landscape} { @content; }
+  }
+  @else if $media == iPad-Portrait {
+    @media #{$iPad-Portrait} { @content; }
+  }
+    /*
+@else if $media == wide-screens {
+@media only screen and (min-width: $break-large) { @content; }
+}
+*/
+}
+
+//Prefixes definition
+$webkit:true;
+$o:true;
+$moz:true;
+$w3:true;
+$ms:true;
+
+//Gradient Mixin
+@mixin gradient($mode,$direction,$from,$to,$oldDirection:null){
+
+  @if $webkit == true {
+    @if($oldDirection != null){
+      background-image: -webkit-gradient($mode, #{$oldDirection}, from($from),to($to));
+    }
+    background-image: -webkit-#{$mode}-gradient($direction, $from, $to);
+  }
+  @if $moz == true {
+    background-image: -moz-#{$mode}-gradient($direction, $from, $to);
+  }
+  @if $o == true {
+    background-image: -o-#{$mode}-gradient($direction, $from, $to);
+  }
+  @if $ms == true {
+    background-image: -ms-#{$mode}-gradient($direction, $from, $to);
+  }
+  @if $w3 == true {
+    background-image: #{$mode}-gradient($direction, $from, $to);
+  }
+}
+
+@mixin lime_button {
+  background-color: #defd5e;
+  color: black;
+  @include gradient(linear,top,#defd5e,#849d1c,'left top, left bottom');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#defd5e', EndColorStr='#849d1c');
+}
+
+@mixin lime_circle {
+  background-color: #ddfd5a;
+  @include gradient(linear,bottom,rgb(221, 253, 90),rgb(132, 157, 28),'left bottom, left top');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#ddfd5a', EndColorStr='#849d1c');
+}
+
+@mixin dark_arrow {
+  background: url(/img/right_line_dark.png) 60% 3px no-repeat;
+  height: 20px;
+  width: 20px;
+}
+
+@mixin contact_exit_button {
+  background-color: #defd5e;
+  color: white;
+  @include gradient(linear,top,#defd5e,#849d1c,'left top, left bottom');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#defd5e', EndColorStr='#849d1c');
+}
+
+@mixin button_bottom_hover {
+  background-color: #1f292e;
+  color: white;
+  @include gradient(linear,top,#1d272b,#1b2428,'left top, left bottom');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+}
+
+@mixin button_blue {
+  background-color: #304047;
+  @include gradient(linear,top,rgb(48, 64, 71),rgb(73, 94, 105),'left top, left bottom');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#304047', EndColorStr='#495e69');
+
+  a {
+    color: white;
+  }
+}
+
+@function calc-em($target-px, $context) {
+  @return ($target-px / $context) * 1em;
+}
+
+@function calc-target($target-px, $context) {
+  @return ($target-px / $context)  * 1px;
+}
+
+@function divide_percentage($one, $two) {
+  @return ($one / $two) * 1%
+}

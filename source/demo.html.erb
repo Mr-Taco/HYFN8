@@ -1,0 +1,46 @@
+;;;
+"title": "HYFN8 - Request a Demo Form"
+;;;
+
+<%= partial 'layouts/header'  %>
+
+<form id="demo_mobile">
+  <div id="demo_mobile_header">
+    Demo Request
+  </div>
+
+  <div id="demo_mobile_content">
+    <p>First Name:*</p>
+    <input name="first_name" type="text" pattern="^[a-zA-Z0-9,#.-]+$" required />
+    <p>Last Name:*</p>
+    <input name="last_name" type="text" pattern="^[a-zA-Z0-9,#.-]+$" required />
+    <p>Email:*</p>
+    <input name="email" type="email" pattern="^[^@]+@[^@]+\.[^@]+$" required />
+    <p>Organization:*</p> 
+    <input name="organization" type="text" required />
+    <input type="hidden" name="message" value="mobile demo form" />
+  </div>  
+  
+  <div id="demo_mobile_footer">
+    <div class="middle">
+      *Required Fields
+    </div>
+  
+    <div class="middle">
+      <button type="submit" class="button"> SUBMIT 
+        <div class="arrow_container"> 
+          <div class="arrow"></div> 
+        </div> 
+      </button>
+    </div>
+  </div>
+</form>
+
+<% content_for :content_for_bottom do %>
+    <script>
+      App = {};
+      App.api_url = "<%=api_url %>";
+    </script>
+    <%= javascript_include_tag "jquery.h5validate.js" %>
+    <%= javascript_include_tag "demo_form.js" %>
+<% end %>

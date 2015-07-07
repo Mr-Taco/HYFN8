@@ -1,0 +1,236 @@
+/*The Desktop Demo Page Styling*/
+
+#demo_container {
+  @include column(4);
+  @include push(1);
+  @include transition(margin-top 1s ease-in-out);
+  background-color: white;
+  color: #526c78;
+  position: fixed;
+  z-index: 100;
+  margin-top: -1200px;
+
+  &.open {
+    z-index: 100;
+	margin-top: 20px;
+  }
+
+  @include respond-to ('mobile-phone') {
+    display: none;
+  }
+}
+
+#demo_header {
+  color: #475b66;
+  text-align: center;
+  font-family: OpenSansLight;
+  font-size: calc-em(2.5%, 1%);
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 5%;
+
+  img {
+    float: right;
+  	margin-top: -10px;
+  	margin-left: -10%;
+  	margin-right: 2%;
+    cursor: pointer;
+}
+
+  p {
+    font-size: calc-em(1%, 3%);
+  	padding-top: 20px;
+  	color: #475b66;
+  }
+
+}
+		
+#demo_content {
+  @include column(5);
+  @include push(0.5);
+  border: 1px solid #ced2d4;
+  border-radius: 5px;
+  background-color: #f4f4f7;
+
+  .error {
+    border: 1px solid red !important;
+  }
+
+	.middle {
+	  @include column(2);
+	  margin-left: 10%;
+	  margin-top: 15px;
+
+	  input {
+      width: 100%;
+      font-size: 14px;
+      font-family: OpenSansLight;
+      margin-top: 10px;
+      margin-bottom: 3%;
+      padding: 3% 5%;
+      background-color: #efeff2;
+      border-radius: 5px;
+      border: 1px solid #cfd5d8;
+      @include transition(all 0.25s ease-in-out);
+      outline: none;
+      cursor: pointer;
+    }
+	}
+
+	.bottom {
+	  @include column(4.5);
+	  margin-left: 10%;
+
+	  textarea {
+  		width: 100%;
+  		font-size: 14px;
+  		font-family: OpenSansLight;
+  		margin-top: 5px;
+  		margin-bottom: 5%;
+  		padding: 3% 3%;
+  		background-color: #efeff2;
+  		border-radius: 5px;
+  		border: 1px solid #cfd5d8;
+      @include transition(all 0.25s ease-in-out);
+      outline: none;
+      cursor: pointer;
+    }
+	}
+}
+
+/*The Mobile Header Page Styling*/
+
+#demo_mobile, #demo_mobile_contact {
+  @include column(6);
+  background-color: #f4f4f7;
+  color: #6d7e90;
+  z-index: 200;
+  border-bottom: 1px solid #d1d1d8;
+
+  &.open {
+    z-index: 200;
+	  margin-top: 0;
+  }
+
+  @include respond-to ('mobile-phone') {
+    display: block;
+  }
+
+  #demo_mobile_header {
+    color: #526c77;
+    background-color: #ededf4;
+    border-bottom: 1px solid #adb4bc;
+    text-align: center;
+    font-size: calc-em(1.5%, 1%);
+    padding: 2% 0;
+    font-family: OpenSansLight;
+  }
+
+  #demo_mobile_content {
+   	@include column(5.5);
+   	@include push(0.25);
+   	padding-top: 20px;
+   	text-align: center;
+
+    .error {
+      border: 1px solid red !important;
+    }
+
+   	p {
+   	  text-align: left;
+   	  color: #526c77;
+
+   	  &:first-child {
+   	  	padding-top: 20px;
+   	  }
+   	}
+
+ 	  input {
+      width: 90%;
+      font-size: 14px;
+      font-family: OpenSansLight;
+      margin-top: 10px;
+      margin-bottom: 3%;
+      padding: 3% 5%;
+      background-color: #efeff2;
+      border-radius: 5px;
+      border: 1px solid #cfd5d8;
+      @include transition(all 0.25s ease-in-out);
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  #demo_mobile_footer {
+    @include column(6);
+    background-color: #cdd4da;
+    border-top: 1px solid #d8e0e7;
+    padding-top: 20px;
+
+    .middle {
+      @include column(2);
+      @include push(1.85);
+      text-align: center;
+      padding: 10px 0;
+      font-size: 11px;
+    }
+
+    .right {
+      @include column(1.75);
+      @include push(2);
+    }
+
+  	button {
+  	  @include column(4);
+      float: right;
+  	  border-radius: 4px;
+  	  @include gradient(linear,top,rgb(59, 74, 81),rgb(31, 39, 44),'left top, left bottom');
+  	  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#3b4a51', EndColorStr='#1f272c');
+  	  border: solid 1px #000000;
+  	  font-family: "OpenSansLight"; 
+  	  font-size: calc-em(14, 16);
+  	  color: #fff;
+  	  padding: 10px 2%;
+  	  text-shadow: 0 1px rgba(0,0,0,.36);
+      margin-right: 5px;
+      min-width: 100px;
+      cursor: pointer;
+
+  	  &:hover {
+  	    @include lime_button;
+  	  }
+
+  	  &:hover div {
+  	    @include lime_circle;
+  	  }
+
+      &:hover div.arrow {
+        @include dark_arrow;
+      }
+
+      .arrow {
+        background: url(/img/right_arrow_white.png) 70% 4px no-repeat;
+        height: 20px;
+        width: 20px;
+      }
+
+      .arrow_container {
+        float: right;
+        height: 20px;
+        width: 20px;	
+    	  border-radius: 13px 12px 12px 13px/13px 13px 12px 12px;
+    	  @include gradient(linear,bottom,rgb(59, 74, 81),rgb(31, 39, 44),'left bottom, left top');
+    	  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#3b4a51', EndColorStr='#1f272c');
+    	  font-family: "OpenSansLight";
+    	  font-size: 14px;
+    	  color: #fff;
+    	  text-shadow: 0 1px rgba(0,0,0,.36);
+    	  
+  	  }
+  	}
+  }
+}
+
+
+
+

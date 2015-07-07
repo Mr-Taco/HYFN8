@@ -1,0 +1,423 @@
+#carousel.contact {
+  @include column(4);
+  @include prepend(1);
+  @include append(1);
+  color: white;
+  text-align: center;
+  padding-bottom: 3%;
+
+  .contact {
+    @include column(1.49);
+    border-right: 1px solid #34454c;
+    text-align: center;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    div.icon_set {
+      font-family: 'HYFN8IconSet';
+      font-size: calc-em(50, 16);
+      line-height: calc-em(5.5, 16);
+      margin: 15px auto 20px auto;
+      padding-bottom: 15px;
+    }
+
+    p {
+      margin-top: 10%;
+      margin-bottom: 10%;
+      padding: 0 3%;
+      font-size: 90%;
+      color: $darkBlue;
+    }
+  }
+
+  h3 {
+    font-size: 150%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align: center;
+  }
+
+  .contact_us {
+    border: none;
+    border-radius: 15px;
+    background: #b3d527;
+    color: #4f6014;
+    padding: 2% calc-em(5%, 3%);
+    font-size: 80%;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #1f292e;
+      color: white;
+    }
+      }
+
+  @include respond-to ('mobile-phone') {
+    display: none;
+  }
+}
+
+#were_here_mobile {
+  text-align: center;
+  font-family: OpenSansLight;
+  font-size: calc-em(2.75%, 1%);
+  color: #b3d527;
+  padding-bottom: 10%;
+  padding-top: 5%;
+  display: none;
+
+  p {
+    font-size: calc-em(1%, 2%);
+    color: #aab1b7;
+    padding-bottom: 1%;
+
+    &:first-child {
+      padding-top: 3%;
+    }
+  }
+
+  @include respond-to ('mobile-phone') {
+    display: block;
+  }
+}
+
+#our_locations {
+  @include column(6);
+  background: url(/img/our_locations.png);
+
+  h4 {
+    font-size: calc-em(3%,1%);
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+  }
+
+  .la {
+    @include column(1.5);
+    @include push(1.25);
+    background-color: black;
+    opacity: 1;
+    margin-bottom: 3%;
+    background: url(/img/la_background.png) 50% 50%;
+
+    @include respond-to ('mobile-phone') {
+      @include column(2.5);
+      @include push(.25);
+    }
+
+  }
+
+  .ny {
+    @include column(1.5);
+    @include push(1.75);
+    background-color: black;
+    opacity: 1;
+    margin-bottom: 3%;
+    background: url(/img/ny_background.png) 50% 50%;
+
+    @include respond-to ('mobile-phone') {
+      @include column(2.5);
+      @include push(.75);
+    }
+  }
+
+  h5 {
+    font-size: calc-em(1.5%,1%);
+    text-align: center;
+    color: #b3d527;
+    margin-top: 15%;
+    margin-bottom: 5%;
+
+    @include respond-to ('mobile-phone') {
+      font-size: calc-em(1.25%, 1%);
+    }
+  }
+
+  p {
+    font-size: calc-em(1%,1%);
+    color: #cdd4da;
+    text-align: center;
+
+    @include respond-to ('mobile-phone') {
+      font-size: calc-em(.6%, 1%);
+    }
+  }
+
+  p.last-child {
+      margin-bottom: 15%;
+  }
+}
+
+#send_message {
+  background-color: #f4f4f7;
+  display: none;
+
+  p {
+    text-align: center;
+    color: #375562;
+  }
+
+  .message {
+    @include column(6);
+    padding-top: 3%;
+    padding-bottom: 3%;
+    border-top: 1px solid #adb4bc;
+    border-bottom: 1px solid #adb4bc;
+    background-color: #fefeff;
+    color: #375562;
+    font-size: calc-em(1%, 1%);
+    font-family: OpenSansLight;
+    text-align: center;
+    @include gradient(linear,top,rgb(254, 254, 255),rgb(233, 233, 241),'left top, left bottom');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#fefeff', EndColorStr='#e9e9f1');
+    cursor: pointer;
+  }
+
+  @include respond-to ('mobile-phone') {
+    display: block;
+    }	
+}
+
+/*Scrolling Contact Us Form */
+
+body {
+  overflow: auto;
+
+  &.no_scroll {
+    overflow: hidden;
+  }
+}
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  opacity: .8;
+  background-color: black;
+  z-index: 10;
+  display: none;
+}
+
+#form_container {
+  @include column(4);
+  @include push(1);
+  @include transition(margin-top 1s ease-in-out);
+  color: #526c78;
+  position: fixed;
+  z-index: 100;
+  margin-top: -1200px;
+
+  &.open {
+    z-index: 100;
+    margin-top: 0px;
+  }
+}
+
+#demo_container {
+	@include column(4.5);
+	@include push(1.5);
+	@include transition(margin-top 1s ease-in-out);
+	color: #526c78;
+	position: fixed;
+	z-index: 100;
+	margin-top: -700px;
+
+	&.open {
+		z-index: 100;
+		margin-top: 0px;
+	}
+}
+
+#contact_form {
+  background-color: #f1f5fa;
+  color: $darkBlue;
+}
+
+#form_header {
+  background-color: #1f292e;
+  @include gradient(linear,left,rgb(31, 41, 46),rgb(26, 34, 38),'left center, right center');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1,StartColorStr='#1f292e', EndColorStr='#1a2226');
+  color: white;
+  font-family: OpenSansLight;
+  font-size: calc-em(1.5%, 1%);
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 5%;
+
+  img {
+    float: right;
+    margin-top: -10px;
+    margin-right: 3%;
+    cursor: pointer;
+  }
+}
+
+#form_content {
+  border-bottom: 1px solid #adb4bc;
+  @include column(6);
+  background-color: #f1f5fa;
+  padding-bottom: 5%;
+
+  p {
+    color: $darkBlue;
+  }
+
+  .error {
+    border: 1px solid red !important;
+  }
+
+  .left {
+    @include column(1);
+    padding-left: 5%;
+    margin-top: 25px;
+    text-align: center;
+    font-size: calc-em(1%,1.25%);
+  }
+
+  .middle {
+    @include column(1.65);
+    margin-left: 5%;
+    margin-top: 15px;
+
+    input {
+      width: 100%;
+      font-size: 14px;
+      font-family: OpenSansLight;
+      margin-top: 10px;
+      margin-bottom: 3%;
+      padding: 3% 5%;
+      background-color: #efeff2;
+      border-radius: 5px;
+      border: 1px solid #cfd5d8;
+      @include transition(all 0.25s ease-in-out);
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  .right {
+    @include column(1.5);
+    margin-left: 10%;
+    margin-top: 15px;
+
+    input {
+      width: 100%;
+      font-size: 14px;
+      font-family: OpenSansLight;
+      margin-top: 10px;
+      margin-bottom: 3%;
+      padding: 3% 5%;
+      background-color: #efeff2;
+      border-radius: 5px;
+      border: 1px solid #cfd5d8;
+      @include transition(all 0.25s ease-in-out);
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  .bottom {
+    @include column(3.65);
+    margin-left: 5%;
+
+    textarea {
+      width: 100%;
+      font-size: 14px;
+      font-family: OpenSansLight;
+      margin-top: 5px;
+      margin-bottom: 1%;
+      padding: 2% 3%;
+      background-color: #efeff2;
+      border-radius: 5px;
+      border: 1px solid #cfd5d8;
+      @include transition(all 0.25s ease-in-out);
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    margin-bottom: 5%;
+    border-bottom: 1px solid #f1f5fa;
+  }
+
+  h3 {
+    margin-top: 10%;
+    font-size: calc-em(1.5%, 1%);
+    color: #61c3c4;
+  }
+
+  p {
+    &:last-child {
+      font-size: 10px;
+    }
+  }
+}
+
+#form_footer {
+  @include column(6);
+  background-color: #cdd4da;
+  border-top: 1px solid #dadfe3;
+  border-bottom: 1px solid #adb4bc;
+  color: white;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-align: right;
+
+  .button {
+    background-color: #3d4d53;
+    color: white;
+    padding: 1% 0;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid black;
+    font-family: OpenSansLight;
+    text-align: center;
+    width: 150px;
+    margin-right: 30px;
+    float: right;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #defd5e;
+      color: black;
+    }
+
+    &:hover div {
+      background-color: #b3d527;
+    }
+
+    &:hover div.arrow {
+      background: url(/img/right_line_dark.png) 60% 3px no-repeat;
+      height: 20px;
+      width: 20px;
+    }
+
+    .arrow {
+      background: url(/img/right_arrow_white.png) 70% 4px no-repeat;
+      height: 20px;
+      width: 20px;
+    }
+
+    .arrow_container {
+      float: right;
+      height: 20px;
+      width: 20px;
+      border-radius: 13px 12px 12px 13px/13px 13px 12px 12px;
+      background-color: #1f292e;
+      font-family: "OpenSansLight";
+      font-size: 14px;
+      color: #fff;
+      text-shadow: 0 1px rgba(0,0,0,.36);
+      margin-right: 5%;
+      margin-top: 3px;
+    }
+  }
+}
+
+
+

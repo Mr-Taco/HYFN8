@@ -1,0 +1,515 @@
+body {
+  background: black;
+  font-family: 'OpenSansLight';
+  color: $darkBlue;
+  line-height: 20px;
+  font-size: 100%;
+
+  @include respond-to ('iPad-Portrait') {
+    font-size: 80%;
+  }
+
+  @include respond-to ('iPad-Landscape') {
+    font-size: 80%;
+  }
+}
+
+h2, h1 {
+  line-height: calc-em(22, 16);
+}
+
+header {
+
+  #header_table {
+    @include column(6.03);
+    @include pull(0.03);
+    display: table;
+    color: #6c8d9e;
+    padding-left: 5%;
+
+    tr {
+      border-top: 1px solid #2d3a41;
+
+      &:last-child {
+        border-bottom: 1px solid #2d3a41;
+      }
+    }
+
+    td {
+      display: table-cell;
+      vertical-align: middle;
+      padding-left: 20px;
+      height: 53px;
+    }
+
+    ul {
+      border-left: 1px solid #000000;
+      height: 56px;
+      margin-bottom: -3px;
+    }
+
+    li {
+      border-left: 1px solid #2d3a41;
+      border-right: 1px solid #000000;
+      height: 56px;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    #hyfn8_login {
+      color: #6A8897;
+
+      img {
+        padding-left: 5px;
+      }
+    }
+
+    @include respond-to ('mobile-phone') {
+      display: none;
+    }
+
+    .header_logo {
+      padding-top: 6px;
+      height: 35px;
+    }
+  }
+
+  .button_bottom {
+    background-color: #1f292e;
+    @include gradient(linear,top,rgb(31, 41, 46),rgb(26, 34, 38),'left top, left bottom');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+    color: white;
+    padding: 12px 33px;
+    border-radius: 5px;
+    font-size: calc-em(15,16);
+    display: block;
+    margin: 7px 10px 0px 10px;
+
+    &:hover, &.active {
+      @include lime_button;
+    }
+  }
+
+  #top_header {
+    height: 60px;
+    background: url(/img/blue_lines.png);
+  }
+
+  #bottom_header {
+    height: 59px;
+    background-color: #1f292e;
+    @include gradient(linear,top,rgb(31, 41, 46),rgb(26, 34, 38),'left top, left bottom');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+  }
+
+  .right_side {
+    text-align: right;
+    padding-left: 5%;
+  }
+
+  .left-side {
+    text-align: left;
+    padding-left: 5%;
+  }
+}
+
+.request_button_blue {
+  border: 1px solid #000000;
+  background-color: #1f292e;
+  @include gradient(linear,top,#394950,#1c2529,'left top, left bottom');
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+  color: white;
+  padding: 10px 2%;
+  border-radius: 5px;
+  font-size: calc-em(15, 16);
+  font-family: 'OpenSansLight';
+  margin-right: calc-em(2px, 3px);
+  cursor: pointer;
+
+  &:hover {
+    @include lime_button;
+  }
+}
+
+/*The styling for the top third of the footer*/
+
+#top_footer {
+  @include column(6);
+  background-color: #cdd4da;
+  height: 250px;
+
+  em {
+    font-style: italic;
+  }
+
+  strong {
+    font-family: OpenSansBold;
+  }
+
+  @include respond-to ('mobile-phone') {
+    display: none;
+  }
+
+  .left_container {
+    @include column(2);
+    @include push(1);
+    display: table;
+    height: 150px;
+    padding-top: 2%;
+  }
+
+  .left_inside {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    font-size: calc-em(12, 16);
+    padding-right: 15%;
+    border-right: 1px solid #a5b2bb;
+
+    div {
+      margin-top: calc-em(5px, 3px);
+    }
+  }
+
+  .left_inside_padding {
+    margin-right: 12%;
+  }
+
+  .right_container {
+    @include column(2);
+    @include push(1);
+    text-align: center;
+    display: table;
+    height: 150px;
+    padding-top: 30px;
+  }
+
+  .right_inside {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: calc-em(22, 16);
+    padding-left: 29%;
+
+
+    div {
+      margin-top: calc-em(5px, 3px);
+    }
+
+    button {
+      border: 1px solid #000000;
+      background-color: #1f292e;
+      @include gradient(linear,top,#394950,#1c2529,'left top, left bottom');
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+      color: white;
+      padding: 10px 8%;
+      border-radius: 5px;
+      font-size: calc-em(24, 22);
+      font-family: 'OpenSansLight';
+      cursor: pointer;
+
+      &:hover {
+        @include lime_button;
+      }
+    }
+  }
+}
+
+  .lime_button {
+    border: 1px solid #000000;
+    background-color: #ddfd5b;
+    @include gradient(linear,top,#defd5e,#849d1c,'left top, left bottom');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#defd5e', EndColorStr='#849d1c');
+    color: black;
+    padding: 10px 5%;
+    border-radius: 5px;
+    font-size: calc-em(16, 16);
+    font-family: OpenSansLight;
+    margin-right: calc-em(2px, 3px);
+    cursor: pointer;
+
+    &:hover {
+      @include button_bottom_hover;
+    }
+  }
+
+footer {
+
+  .footer_table {
+    @include column(6, true);
+    display: table;
+
+    td {
+      vertical-align: middle;
+      width: 70%;
+      padding-left: 20px;
+    }
+  }
+
+  #middle_footer {
+    @include column(6, true);
+    height: 90px;
+    text-align: center;
+    background-color: #1f292e;
+    @include gradient(linear,top,rgb(31, 41, 46),rgb(26, 34, 38),'left top, left bottom');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+
+    a.icon_set {
+      font-family: 'HYFN8IconSet';
+      font-size: calc-em(12, 16);
+      line-height: calc-em(5.5, 16);
+      margin: 0 auto 0 auto;
+      color: #75838c;
+    }
+
+    @include respond-to ('mobile-phone') {
+      display: none;
+    }
+  }
+
+  #bottom_footer {
+    height: 60px;
+    width: 100%;
+    background: #14191d;
+    color: #6c8d9e;
+    font-size: calc-em(11, 16);
+
+    a {
+      text-decoration: none;
+      color: #6c8d9e;
+    }
+
+    @include respond-to ('mobile-phone') {
+      text-align: center;
+      font-size: 9px;
+
+      button {
+        display: none;
+      }
+
+      td {
+        width: 100%;
+      }
+    }
+  }
+
+  .right_side {
+    text-align: right;
+    font-size: calc-em(20, 16);
+  }
+
+
+  #middle_footer, #get_connected_mobile {
+    text-align: center;
+    .container {
+      display: table;
+      margin: 30px auto 0 auto;
+
+      > * {
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    span {
+      font-size: 30px;
+
+      &:first-child {
+        padding-right: 10px;
+      }
+    }
+    .icon {
+      height: 25px;
+      width: 35px;
+    }
+    a {
+      display: block;
+      margin: 0 auto;
+      &.facebook {
+        @include icon_sprite(facebook_icon);
+      }
+      &.twitter {
+        @include icon_sprite(twitter_icon);
+      }
+      &.google_plus {
+        @include icon_sprite(google_plus_icon);
+      }
+      &.linked_in {
+        @include icon_sprite(linked_in_icon);
+      }
+    }
+  }
+
+  #get_connected_mobile {
+    padding: 20px 0;
+
+    span {
+      font-size: 18px;
+
+      &:first-child {
+        padding-right: 0;
+      }
+    }
+
+    .container {
+      display: table;
+      margin: 15px auto 0 auto;
+    }
+
+    .icon {
+      height: 25px;
+      width: 45px;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  color: #b3d527;
+  font-size: calc-em(30, 16);
+  font-family: OpenSansLight;
+  text-align: center;
+  margin-top: 20px;
+}
+
+h2 {
+  color: #b3d527;
+  font-size: calc-em(35%, 25%);
+  font-family: OpenSansLight;
+  text-align: center;
+}
+
+p {
+  color: #ffffff;
+}
+
+#carousel {
+  @include column(4);
+  @include prepend(1);
+  @include append(1);
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &.services {
+    img {
+      padding-top: 0;
+      position: relative;
+      top: 3px;
+    }
+
+    @include respond-to ('mobile-phone') {
+      display: none;
+    }
+  }
+
+  &.home {
+    background: url(/img/homepage_header_bg.jpg) 50% 0 no-repeat black;
+
+    @include respond-to ('mobile-phone') {
+      padding-bottom: 2.5em;
+    }
+  }
+
+  &.about {
+    background: url(/img/about_us_header_bg.jpg) 50% 0 no-repeat black;
+
+    @include respond-to ('mobile-phone') {
+      @include column(6, true);
+      @include append(0);
+      @include prepend(0);
+    }
+  }
+
+  .carousel_header {
+    color: #b3d527;
+    font-size: calc-em(55, 16);
+    font-family: OpenSansLight;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .carousel_subtitle {
+    color: white;
+    margin-bottom: 30px;
+    font-size: calc-em(18, 16);
+    line-height: calc-em(22, 16);
+  }
+
+  img {
+    padding-top: 60px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .bottom_strip {
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 1;
+  }
+
+  $carousel_padding: 3%;
+
+  button, .btn {
+    border: 1px solid #000000;
+    background-color: #1f292e;
+    background-color: #ddfd5d;
+    @include gradient(linear,top,rgb(221, 253, 93),rgb(133, 158, 28),'left top, left bottom');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#ddfd5d', EndColorStr='#859e1c');
+    color: #495814;
+    padding: 13px 5%;
+    border-radius: 5px;
+    font-size: calc-em(22, 16);
+    font-family: OpenSansLight;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    display: inline-block;
+
+    &:hover {
+      @include button_bottom_hover;
+    }
+  }
+
+  @include respond-to('mobile-phone') {
+    h1, h2 {
+      font-size: 35px;
+      margin: 0;
+    }
+
+    .carousel_subtitle {
+      width: auto;
+      @include prepend(0);
+      padding: 2%;
+      margin-top: 0;
+    }
+
+    button {
+      font-size: 16px;
+    }
+  }
+}
+
+.section {
+  @include column(4, true);
+  @include push(1);
+
+  @include respond-to ('mobile-phone') {
+    @include column(6, true);
+    @include push(0);
+  }
+}

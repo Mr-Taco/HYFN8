@@ -1,0 +1,33 @@
+#content.thank_you {
+
+  #carousel {
+    text-align: center;
+    p, > div {
+      @include column(4, true);
+      @include push(1);
+      text-align: center;
+    }
+
+    > div {
+      margin-top: 20px;
+    }
+    .lime_button {
+      padding: 1% 5%;
+    }
+
+    @include respond-to ('mobile-phone') {
+      display: block;
+
+      p, > div {
+        @include column(6, true);
+        @include push(0);
+        text-align: center;
+      }
+
+      .lime_button {
+        padding: 2% 7%;
+        margin-top: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,97 @@
+<header>
+  <div id="mobile_nav">
+      <table>
+        <tr>
+          <td <% if request.path.start_with?("about") %>class="active"<% end %>>
+            <a href="/about" class="link">
+              <div class="icon_set about_us_icon">&#xe001;</div>
+              <span>About Us</span></a>
+          </td>
+          <td <% if request.path.start_with?("contact") %>class="active"<% end %>>
+            <a href="/contact" class="link">
+              <div class="icon_set">&#xe006;</div>
+              <span>Contact Us!</span></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="listen">
+            <a href="/features/index.html?section=listen" class="link">
+              <div class="icon_set">&#xe007;</div>
+              <span>Listen</span></a>
+          </td>
+          <td class="create">
+            <a href="/features/index.html?section=create" class="link">
+              <div class="icon_set">&#xe000;</div>
+              <span>Create</span></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="enhance">
+            <a href="/features/index.html?section=enhance" class="link">
+              <div class="icon_set">&#xe002;</div>
+              <span>Enhance</span></a>
+          </td>
+
+          <td class="track">
+            <a href="/features/index.html?section=track" class="link">
+              <div class="icon_set">&#xe003;</div>
+              <span>Track Goals</span></a>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="collaborate">
+            <a href="/features/index.html?section=collaborate" class="link">
+              <div class="icon_set">&#xe005;</div>
+            <span>Collaborate</span></a>
+          </td>
+          <td class="engage">
+            <a href="/features/index.html?section=engage" class="link">
+              <div class="icon_set">&#xe004;</div>
+            <span>Engage Fans</span></a>
+          </td>
+        </tr>
+      </table>
+  </div>
+  <div id="mobile_header">
+    <a href="/"><img src="/img/HYFN8Logo.svg"></a>
+    <div id="mobile_nav_launch" class="icon_set mobile_nav">&#xe00e;</div>
+
+    <!--[if gt IE 9]><!--><div id="mobile_nav_close">&#215;</div><!--<![endif]-->
+    <!--[if lte IE 9]><div id="mobile_nav_close" class="mobile_nav_close_ie">&#215;</div><![endif]-->
+
+    <div id="mobile_nav_close">&#215;</div>
+  </div>
+
+<!--Desktop version of header-->
+
+  <table id="header_table">
+    <tr id="top_header">
+      <td class="left_side"><a id="hyfn8_login" href="http://app.hyfn8.com/users/sign_in">Client Login <img src="/img/client_login_arrow.png"/></a></td>
+      <td class="right_side">Contact Us: (888) 836-3769
+        <button type="button" class="request_button_blue" id="top_header_request">Request a Demo</button></td>
+    </tr>
+
+    <tr id="bottom_header">
+      <td class="left_side"><a href="/">
+        <!--[if gte IE 9]><!--><img class="header_logo" src="/img/HYFN8Logo.svg" onerror="this.src=/img/hyfn8_logo.jpg;this.onerror=null;" alt="HYFN8 Logo"><!--<![endif]-->
+        <!--[if lt IE 9]><img alt="HYFN8 Logo" src="/img/hyfn8_logo.jpg" /><![endif]-->
+      </a></td>
+      <td class="right_side">
+        <ul>
+          <li><a href="/features" type="button" class='button_bottom <% if request.path.start_with?("features") %>active<% end %>
+            '>Features</a></li>
+          <li><a href="/about" type="button" class='button_bottom <% if request.path.start_with?("about") %>active<% end %>
+            '>About Us</a></li>
+          <li><a href="/contact" type="button" id="header_contact" class="button_bottom <% if request.path.start_with?("contact") %>active<% end %>">Contact Us</a></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+
+
+</header>
+
+

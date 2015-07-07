@@ -1,0 +1,85 @@
+<footer>
+
+<!--Mobile Footer-->
+
+  <section id="mobile_footer">
+    <div id="client-logos-mobile">
+      <% client_logos[0...40].shuffle.each_slice(20) do |row| %>
+          <div class="client-logo-row">
+            <% row.each_slice(5) do |pane| %>
+                <div class="client-logo-pane face-1">
+                  <% pane.each.with_index do |logo, index| %>
+                    <div class='<%="logo-face face-#{index+1}" %>'>
+                      <img src="<%=logo.url %>" />
+                    </div>
+                  <% end %>
+                </div>
+            <% end %>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="in_action">
+      <p>Are you ready to see it in action?</p>
+      <a href="/demo"><button>Request a Demo</button></a>
+    </div>
+
+    <div id="get_connected_mobile">
+      <span>Let's Get Connected</span>
+
+      <div class="container">
+        <span class="icon"><a href="https://www.facebook.com/WeAreHYFN" class="icon_set" target="_blank">&#xe00a;</a></span>
+        <span class="icon"><a href="https://twitter.com/hyfn" class="icon_set" target="_blank">&#xe009;</a></span>
+      </div>
+    </div>
+
+  </section>
+
+<!--Normal Footer-->
+
+  <div id="top_footer">
+    <div class="left_container">
+      <div class="left_inside">
+        <div id="testimonial" class="left_inside_padding">
+          &ldquo;<em class="quote"></em>&rdquo;
+          <div>
+            <strong class="author"></strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="right_container">
+      <div class="right_inside">
+        Are you ready to see it in action?
+          <div>
+            <button type="button" id="top_footer_request">Request a Demo</button>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="middle_footer">
+    <div class="container">
+      <span>Let's Get Connected</span>
+      <span class="icon"><a href="https://www.facebook.com/WeAreHYFN" class="icon_set" target="_blank">&#xe00a;</a></span>
+      <span class="icon"><a href="https://twitter.com/hyfn" class="icon_set" target="_blank">&#xe009;</a></span>
+    </div>
+  </div>
+
+  <table class="footer_table">
+    <tr id="bottom_footer">
+      <td>&copy; 2013 HYFN. All Rights Reserved.
+      </td>
+        
+      <td class="right_side"><button type="button" id="bottom_footer_request" class="lime_button">Request a Demo</button>
+      </td>
+    </tr>
+  </table>
+
+
+
+
+
+</footer>
+

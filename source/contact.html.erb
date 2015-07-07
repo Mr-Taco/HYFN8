@@ -1,0 +1,165 @@
+;;;
+"title": "HYFN8 - Contact Us"
+;;;
+
+<!--The Contact Us Sliding Form and Overlay-->
+
+<div id="overlay"></div>
+<div id="form_container">
+  <form id="contact_form">
+    <div id="form_header">
+      Customer Support
+      <img src="/img/contact_form_close.png" id="exit_contact">
+    </div>
+
+    <div id="form_content">
+      <div class="left">
+        <img src="/img/n8_form_logo.png">
+        <p>For customer care issues, please send us an email or call our live team at:</p>
+        <h3>(888) 836-3769</h3>
+      </div>
+
+      <div class="middle">
+        First Name:
+        <input name="first_name" type="text" pattern="^[a-zA-Z0-9,#.-]+$" required>
+        Last Name:
+        <input name="last_name" type="text" pattern="^[a-zA-Z0-9,#.-]+$" required>
+      </div>
+
+      <div class="right">
+        <p>Email:</p>
+        <input name="email" type="email" pattern="^[^@]+@[^@]+\.[^@]+$" data-h5-errorid="form_error" required>
+        <p>Organization:</p>
+        <input name="organization" type="text" required>
+      </div>
+
+      <div class="bottom">
+        Message:
+        <textarea name="message" type="text" rows="5"></textarea>
+        <p>*All fields required</p>
+      </div>
+    </div>
+
+    <div id="form_footer">
+      <button type="submit" class="button"> Submit
+        <div class="arrow_container">
+          <div class="arrow"></div>
+        </div>
+      </button>
+    </div>
+
+    <input type="hidden" id="source" value="HYFN8-Corporate Contact Form" />
+  </form>
+</div>
+
+<%= partial 'layouts/demo_form'  %>
+<%= partial 'layouts/header'  %>
+
+<!--The Top of the Contact Us Page-->
+
+<section id="carousel" class="contact">
+  <h2 class="carousel_header contact_header">We're Here for You.</h2>
+  <p class="carousel_subtitle contact_subtitle">HYFN8 gets better over time, which is a reflection of the close relationship between our team and those who take it for a spin. Let’s keep the conversation going.</p>
+
+  <div class="contact">
+  	<div class="icon_set">&#xe00c;</div>
+    <h3><span>Customer<br />Support</span></h3>
+    <p>The point of HYFN8 is capturing what you need, so don’t be bashful with questions and comments.</p>
+    <button id="customer" class="contact_us">Contact Us</button>
+  </div>
+
+  <div class="contact">
+  	<div class="icon_set">&#xe008;</div>
+    <h3><span>Media Inquiries</span></h3>
+    <p>Drop us a line if you’re with a media organization curious about the story of HYFN8.</p>
+    <button id="media" class="contact_us">Contact Us</button>
+  </div>
+
+  <div class="contact">
+  	<div class="icon_set">&#xe00d;</div>
+    <h3><span>About HYFN8</span></h3>
+    <p>We’re always ready to chat about details big and small for a platform that progresses every day.</p>
+    <button id="about" class="contact_us">Contact Us</button>
+  </div>
+
+  <div class="contact">
+  	<div class="icon_set">&#xe006;</div>
+    <h3><span>General</span></h3>
+    <p>Let us know what’s on your mind, and we’ll direct you to the right team.</p>
+    <button id="general" class="contact_us">Contact Us</button>
+  </div>
+</section>
+
+<!--Here for you Mobile-->
+
+<section id="were_here_mobile">
+  <h1>We're Here for You</h1>
+  <p>Email: contact@hyfn.com</p>
+  <p>Phone: (888) 836-3769</p>
+  <p>Fax: (888) 371-3365</p>
+  <button class="lime_button">Call Us Now!</button>
+</section>
+
+<!--The Middle Locations Section-->
+
+<section id="our_locations">
+  <h4>OUR LOCATIONS</h4>
+
+  <div class="la">
+    <h5>LOS ANGELES</h5>
+    <p>1235 Hermosa Ave</p>
+    <p>Suite 300</p>
+    <p class="last-child">Hermosa Beach, CA 90254</p>
+  </div>
+
+  <div class="ny">
+    <h5>NEW YORK</h5>
+    <p>333 Hudson St</p>
+    <p>Suite 602</p>
+    <p class="last-child">New York, NY 10014</p>
+  </div>
+</section>
+
+<section id="send_message">
+  <div class="message">Send Us A Message</div>
+
+  <form id="demo_mobile_contact">
+    <div id="demo_mobile_content">
+      <p>First Name:*</p>
+      <input name="first_name" type="text" pattern="^[a-zA-Z0-9,#.-]+$" required />
+      <p>Last Name:*</p>
+      <input name="last_name" type="text" pattern="^[a-zA-Z0-9,#.-]+$" required />
+      <p>Email:*</p>
+      <input name="email" type="email" pattern="^[^@]+@[^@]+\.[^@]+$" required />
+      <p>Organization:*</p>
+      <input name="organization" type="text" required />
+      <input type="hidden" name="message" value="mobile contact us form" />
+    </div>
+
+    <div id="demo_mobile_footer">
+      <div class="middle">
+        *Required Fields
+      </div>
+
+      <div class="middle">
+        <button type="submit" class="button"> SUBMIT
+          <div class="arrow_container">
+            <div class="arrow"></div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
+
+<%= partial 'layouts/footer' %>
+
+<% content_for :content_for_bottom do %>
+    <script>
+        App = {};
+        App.api_url = "<%=api_url %>";
+    </script>
+    <%= javascript_include_tag "jquery.h5validate.js" %>
+    <%= javascript_include_tag "contact_form.js" %>
+<% end %>
+

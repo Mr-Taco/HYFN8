@@ -1,0 +1,4 @@
+method: rsync
+user: hyfn
+host: hyfn8.com
+path: /home/sites/hyfn8.com

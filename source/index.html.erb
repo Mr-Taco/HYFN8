@@ -1,0 +1,106 @@
+<%= partial 'layouts/demo_form'  %>
+<%= partial 'layouts/header'  %>
+
+
+<div id="content">
+
+<!--
+<%= partial 'layouts/column_bar' %>
+-->
+
+  <section id="carousel" class="home">
+    <div id="video_player"></div>
+
+    <img src="/img/do_social_better_video.png" style="visibility: hidden" />
+  </section>
+
+  <section id="client-logos">
+    <p>HYFN has executed successful campaigns for the following brands</p>
+    <% client_logos[0...42].shuffle.each_slice(42) do |row| %>
+        <% row.each_slice(7) do |pane| %>
+            <div class="client-logo-pane face-1">
+              <% pane.each.with_index do |logo, index| %>
+                  <div class="logo-face face-<%=index+1 %>">
+                    <img src="<%=logo.url  %>" />
+                  </div>
+              <% end %>
+            </div>
+        <% end %>
+    <% end %>
+  </section>
+
+
+  <section id="mobile_blurb">
+    <p>Unique in its roots, HYFN8 is the only social media management platform powered by a leading digital agency. The extraordinary technology gets smarter the more you use it. We’re ready when you are.</p>
+  </section>
+
+  <section id="facebook_preferred">
+    <div class="badges_container">
+        <div class="badges">
+          <a href="http://www.facebook-pmdcenter.com/profiles/view/10742"><img src="/img/facebook_strategic.png"></a>
+        </div>
+        <div class="right">
+          <h4>Facebook Preferred Marketing Developer</h4>
+          <p>
+            HYFN is one of a small handful of companies in the world with all four badges in Facebook’s Preferred Marketing Developer program, marking expertise in Pages, Apps, Ads and Insights.  Along with staying ahead of the curve on updates and new features, we work closely with Facebook on finding ways to more effectively leverage the social network’s marketing capabilities.
+          </p>
+        </div>
+    </div>
+  </section>
+
+  <section id="section_services">
+
+
+    <!-- Centered content section -->
+        <div class="service">
+          <div class="icon_set">&#xe00c;</div>
+          <h2>Features</h2>
+
+          <p>
+            Not your ordinary tool, HYFN8 gets smarter the more you use it.
+          </p>
+
+          <a href="/features" class="learn_more">Learn More</a>
+        </div>
+        <div class="service">
+          <div class="icon_set">&#xe00d;</div>
+          <h2>About HYFN8</h2>
+
+          <p>
+            HYFN8 is unique because it’s powered by a leading digital agency.
+          </p>
+
+          <a href="/about" class="learn_more">Learn More</a>
+        </div>
+        <div class="service">
+          <div class="icon_set">&#xe00b;</div>
+          <h2>Careers</h2>
+
+          <p>
+            A constantly evolving platform demands and attracts the industry’s top talent.
+          </p>
+
+          <a href="/about" class="learn_more">Learn More</a>
+        </div>
+        <div class="service">
+          <div class="icon_set contact_us_icon">&#xe006;</div>
+          <h2>Contact Us</h2>
+
+          <p>
+            We’re always happy to chat about this stuff because quite simply, we love it.
+          </p>
+
+          <a href="/contact" class="learn_more">Learn More</a>
+        </div>
+
+  </section>
+
+</div>
+
+<%= partial 'layouts/footer' %>
+
+<% content_for :content_for_bottom do %>
+    <%= javascript_include_tag "home.js" %>
+    <%= javascript_include_tag "carousel.js" %>
+<% end %>
+

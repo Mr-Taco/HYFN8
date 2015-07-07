@@ -1,0 +1,53 @@
+<div id="overlay"></div>
+
+<!--Desktop Demo Form -->
+
+<form id="demo_form">
+  <div id="demo_container">
+    <div id="demo_header">
+      Request a Demo
+      <img src="/img/contact_form_close.png" id="exit_demo">      
+      <p>We'll get back to you shortly</p>
+    </div>
+
+    <div id="demo_content">
+      <div class="middle">
+        First Name:
+        <input name="first_name" type="text" pattern="^[a-zA-Z0-9,#.-]+$" required>
+        Last Name:
+        <input name="last_name" type="text" pattern="^[a-zA-Z0-9,#.-]+$" required>
+      </div>
+
+      <div class="middle">
+        Email:
+        <input name="email" type="email" pattern="^[^@]+@[^@]+\.[^@]+$" required>
+        Organization:
+        <input name="org" type="text" required>
+      </div>
+
+      <div class="bottom">
+        Message:
+        <textarea name="message" type="text"></textarea>     
+      </div> 
+    </div>
+
+    <div id="form_footer">
+      <button type="submit" class="button"> Submit
+        <div class="arrow_container"> 
+          <div class="arrow"></div> 
+        </div> 
+      </button>
+    </div>
+  </div>
+
+  <input type="hidden" id="source" value="HYFN8-Corporate Request a Demo Form" />
+</form>
+
+<% content_for :content_for_bottom do %>
+  <script>
+      App = {};
+      App.api_url = "<%=api_url %>";
+  </script>
+  <%= javascript_include_tag "jquery.h5validate.js" %>
+  <%= javascript_include_tag "demo_form.js" %>
+<% end %>

@@ -1,0 +1,40 @@
+#column_bar {
+  color: white;
+  font-family: OpenSansBold;
+}
+
+#div1 {
+  background-color: yellowgreen;
+  @include column(1);
+  text-align: center;
+}
+
+#div2 {
+  background-color: blue;
+  @include column(1);
+  text-align: center;
+}
+
+#div3 {
+  background-color: green;
+  @include column(1);
+  text-align: center;
+}
+
+#div4 {
+  background-color: red;
+  @include column(1);
+  text-align: center;
+}
+
+#div5 {
+  background-color: chartreuse;
+  @include column(1);
+  text-align: center;
+}
+
+#div6 {
+  background-color: turquoise;
+  @include column(1, true);
+  text-align: center;
+}

@@ -1,0 +1,209 @@
+#about_us_content {
+  @include column(6);
+  background-color: #f4f7fa;
+  height: 100%;
+
+  .left_side {
+    @include column(3);
+    @include prepend(1);
+    margin-top: 6%;
+
+    #overview {
+      h2 {
+        font-size: calc-em(54, 16);
+        text-align: left;
+        padding-right: 15%;
+        margin-top: 2%;
+        font-style: italic;
+        font-family: OpenSansBold;
+        font-weight: bold;
+        color: $darkBlue;
+      }
+
+      p {
+        font-size: calc-em(16, 16);
+        margin-right: 18%;
+        margin-top: 35px;
+        padding-bottom: 10%;
+        color: #bac4cc;
+        border-bottom: 1px solid #c4cccf;
+      }
+    }
+
+    #facebook_marketing {
+
+      h3 {
+        font-size: calc-em(24, 16);
+        text-align: left;
+        margin-top: 20%;
+        margin-bottom: 10%;
+        font-family: OpenSansLight;
+        float: left;
+        color: #475b66;
+        line-height: calc-em(22, 16);
+      }
+
+      div {
+        text-align: left;
+        padding-bottom: 7%;
+      }
+
+      p {
+        font-size: calc-em(14, 16);
+        color: #BAC4CC;
+      }
+
+      img {
+        margin-top: 35%;
+        cursor: pointer;
+      }
+
+      #left_side {
+        @include column(2.5);
+      }
+
+      #right_side {
+        @include column(1.9);
+        @include prepend(1);
+
+        img {
+          float: right;
+          padding-right: 3em;
+        }
+      }
+
+    }
+
+    #service_agency {
+      @include column(4);
+      @include append(1);
+      border-top: 1px solid #c4cccf;
+      margin-bottom: 10%;
+
+      h2 {
+        font-size: calc-em(24, 16);
+        text-align: left;
+        margin-top: 10%;
+        margin-bottom: 6%;
+        font-family: OpenSansLight;
+        color: $darkBlue;
+      }
+
+      p {
+        font-size: calc-em(2%, 2.25%);
+        text-align: left;
+        margin-right: 18%;
+        margin-top: 4%;
+        padding-bottom: 5%;
+        color: #bac4cc;
+      }
+    }
+
+  }
+
+  .jobs {
+    @include column(1.5);
+    border-left: 1px solid #a5b2bb;
+    margin-top: 5%;
+    text-align: center;
+
+    div.icon_set {
+      font-family: 'HYFN8IconSet';
+      font-size: calc-em(50, 16);
+      line-height: calc-em(18, 16);
+      margin: 0 auto 20px auto;
+    }
+
+    h1 {
+      font-size: calc-em(24, 16);
+      color: #536570;
+      margin-bottom: 30px;
+    }
+
+    h3 {
+      font-size: calc-em(20, 16);
+      color: #536570;
+      border-top: 1px solid #c4cccf;
+      padding-top: 25px;
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    p {
+      color: #cfd7dd;
+      font-size: calc-em(2%, 2.25%);
+      margin-bottom: 10%;
+      margin-top: 5%;
+      margin-left: 20%;
+      margin-right: 20%;
+    }
+
+    span {
+      text-align: center;
+    }
+
+
+    a {
+      border: 1px solid #000000;
+      background-color: #1f292e;
+      @include gradient(linear,top,#394950,#1c2529,'left top, left bottom');
+      filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#1f292e', EndColorStr='#1a2226');
+      color: white;
+      padding: 5px 8px;
+      border-radius: 20px;
+      font-size: calc-em(16, 16);
+      margin-left: 25%;
+      margin-right: 25%;
+      margin-bottom: 10%;
+      font-family: OpenSansLight;
+      display: block;
+
+      &:hover {
+        @include lime_button;
+      }
+    }
+
+  }
+
+  @include respond-to ('mobile-phone') {
+    .left_side {
+      @include column(6);
+      @include prepend(0);
+      #facebook_marketing, #service_agency {
+        display: none;
+      }
+
+      #overview > div, #overview > h2 {
+        margin-right: 4%;
+        margin-left: 4%;
+        padding-right: 0;
+      }
+
+      #overview{
+        text-align: left;
+        h2 {
+          text-align: left;
+          font-size: 28px;
+          margin: 0;
+          margin-left: calc-em(16, 16);
+        }
+        
+        > div {
+          text-align: left;
+          font-size: 16px;
+          margin-top: 2%;
+        }
+
+        p {
+          margin-right: 0;
+        }
+      } 
+    }
+    .jobs {
+      display: none;
+    }
+  }
+
+}
+
+
